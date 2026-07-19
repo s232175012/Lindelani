@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lindelani Senior Secondary School</title>
+
+    <link rel="stylesheet" href="sytle/style.css" type="text/css"> <!-- FIXED: sytle -> style -->
+</head>
+<body>
+    <!-- HAMBURGER - 3 lines top left -->
+    <button class="hamburger" onclick="toggleNav()">
+        <span></span>
+        <span></span>
+        <span></span> <!-- ADDED: 3rd line was missing -->
+    </button>
+
+    <!-- VERTICAL LEFT NAVBAR - NAVY THEME -->
+    <nav class="sidebar" id="sidebar">
+           <div class="nav-header">
+                <img src="images/badge.jpeg" alt="Lindelani Logo" class="logo">
+                <h3>Lindelani S.S</h3>
+            </div>
+
+        <a href="#home" onclick="toggleNav()">Home</a>
+        <a href="#about" onclick="toggleNav()">About</a>
+        <a href="#apply" onclick="toggleNav()">Apply</a>
+        <a href="#contact" onclick="toggleNav()">Contact</a>
+    </nav>
+
+    <!-- OVERLAY -->
+    <div class="overlay" id="overlay" onclick="toggleNav()"></div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content" id="mainContent">
+
+        <!-- 1. WELCOME SECTION -->
+        <section class="welcome" id="home">
+            <img src="images/badge.jpeg" alt="Lindelani Badge" class="profile-img">
+            <h1>Lindelani Senior Secondary School</h1>
+            <p class="slogan">"Towards A Brighter Future"</p>
+            <p class="subtext">Nurturing minds, building futures Eastern Cape.</p>
+            <a href="#apply" class="btn">Apply Now</a>
+        </section>
+
+        <!-- 2. ABOUT SECTION -->
+        <section class="about" id="about">
+            <div class="container">
+                <h2>About Lindelani S.S.S</h2>
+                <p>Lindelani Senior Secondary School is dedicated to academic excellence and character development. We serve 1150+ learners with 27+ qualified teachers and maintain a 96% matric pass rate.</p>
+                <div class="stats">
+                    <div class="stat-box">
+                        <h3>96%</h3>
+                        <p>Matric Pass Rate</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>1150+</h3>
+                        <p>Learners</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>27+</h3>
+                        <p>Teachers</p>
+                    </div>
+                </div>
+                <a href="#apply" class="btn">Apply Now</a>
+            </div>
+        </section>
+
+<!-- 3. APPLY SECTION -->
+<section class="apply" id="apply">
+    <div class="container">
+        <header class="apply-header">
+            <h2>Application Form</h2>
+            <p class="order-note">Grade 8 to 12 • <span class="important">* Required Fields</span></p>
+        </header>
+
+        <form id="applicationForm" action="https://formsubmit.co/tiyolindokuhle0@gmail.com" method="POST" enctype="multipart/form-data">
+            <!-- FormSubmit settings -->
+            <input type="hidden" name="_subject" value="New Lindelani Application">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_honey" style="display:none">
+            <input type="hidden" name="_next" value="https://s232175012.github.io/Lindelani/#apply">
+
+            <!-- LEARNER DETAILS -->
+            <fieldset class="form-section">
+                <h2>Learner Details</h2>
+                <div class="form-grid">
+                    <div class="field"><label for="name">Name <span class="important">*</span></label><input type="text" id="name" name="Name" required autocomplete="given-name"></div>
+                    <div class="field"><label for="surname">Surname <span class="important">*</span></label><input type="text" id="surname" name="Surname" required autocomplete="family-name"></div>
+                    <div class="field"><label for="age">Age <span class="important">*</span></label><input type="number" id="age" name="Age" min="1" required></div>
+                    <div class="field"><label for="gender">Gender <span class="important">*</span></label>
+                        <select id="gender" name="Gender" required>
+                            <option value="">Select</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </div>
+                    <div class="field"><label for="idnum">ID Number <span class="important">*</span></label><input type="text" id="idnum" name="ID Number" pattern="[0-9]{13}" maxlength="13" minlength="13" placeholder="0501015009087" required inputmode="numeric"></div>
+                    <div class="field"><label for="cell">Cell Number <span class="important">*</span></label><input type="tel" id="cell" name="Cell Number" pattern="[0-9]{10}" placeholder="078XXXXXXX" required inputmode="tel"></div>
+                    <div class="field"><label for="home">Home Number</label><input type="tel" id="home" name="Home Number" pattern="[0-9]{10}" placeholder="031XXXXXXX" inputmode="tel"></div>
+                    <div class="field"><label for="email">Email</label><input type="email" id="email" name="Email" placeholder="learner@gmail.com" autocomplete="email"></div>
+                    <div class="field full-width"><label for="learnerBirth">ID Copy/Birth Certificate <span class="important">*</span></label><input type="file" id="learnerBirth" name="Learner Birth Certificate" accept=".pdf" required><small>PDF only, max 5MB</small></div>
+                </div>
+            </fieldset>
+
+            <!-- PARENT DETAILS -->
+            <fieldset class="form-section">
+                <h2>Parent/Guardian Details</h2>
+                <div class="form-grid">
+                    <div class="field"><label for="pname">Name <span class="important">*</span></label><input type="text" id="pname" name="Parent Name" required></div>
+                    <div class="field"><label for="psurname">Surname <span class="important">*</span></label><input type="text" id="psurname" name="Parent Surname" required></div>
+                    <div class="field"><label for="page">Age</label><input type="number" id="page" min="1" name="Parent Age"></div>
+                    <div class="field"><label for="pgender">Gender</label>
+                        <select id="pgender" name="Parent Gender">
+                            <option value="">Select</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </div>
+                    <div class="field"><label for="pidnum">ID Number <span class="important">*</span></label><input type="text" id="pidnum" name="Parent ID Number" pattern="[0-9]{13}" maxlength="13" minlength="13" placeholder="7801015009087" required inputmode="numeric"></div>
+                    <div class="field"><label for="pcell">Cell Number <span class="important">*</span></label><input type="tel" id="pcell" name="Parent Cell Number" pattern="[0-9]{10}" placeholder="060XXXXXXX" required inputmode="tel"></div>
+                    <div class="field"><label for="phome">Home Number</label><input type="tel" id="phome" name="Parent Home Number" pattern="[0-9]{10}" placeholder="031XXXXXXX" inputmode="tel"></div>
+                    <div class="field"><label for="pemail">Email</label><input type="email" id="pemail" placeholder="parent@gmail.com" name="Parent Email"></div>
+                    <div class="field full-width"><label for="parentID">ID Copy <span class="important">*</span></label><input type="file" id="parentID" name="Parent ID Copy" accept=".pdf" required><small>PDF only, max 5MB</small></div>
+                </div>
+            </fieldset>
+
+            <!-- ACADEMIC -->
+            <fieldset class="form-section">
+                <h2>Academic</h2>
+                <div class="form-grid">
+                    <div class="field"><label for="prevgrade">Previous Grade <span class="important">*</span></label>
+                        <select id="prevgrade" name="Previous Grade" required>
+                            <option value="">Select</option>
+                            <option value="7">Grade 7</option>
+                            <option value="8">Grade 8</option>
+                            <option value="9">Grade 9</option>
+                            <option value="10">Grade 10</option>
+                            <option value="11">Grade 11</option>
+                        </select>
+                    </div>
+                    <div class="field"><label for="grade">Grade Applying For <span class="important">*</span></label>
+                        <select name="Grade Applying For" id="grade" onchange="toggleStream()" required>
+                            <option value="">Select</option>
+                            <option value="8">Grade 8</option>
+                            <option value="9">Grade 9</option>
+                            <option value="10">Grade 10</option>
+                            <option value="11">Grade 11</option>
+                            <option value="12">Grade 12</option>
+                        </select>
+                    </div>
+                    <div class="field full-width" id="streamSection" style="display:none;">
+                        <label for="stream">Stream <span class="important">*</span></label>
+                        <select name="Stream" id="stream" onchange="showSubjects()">
+                            <option value="N/A">N/A</option>
+                            <option value="science">Science</option>
+                            <option value="commerce">Commerce</option>
+                            <option value="humanities">Humanities</option>
+                        </select>
+                        <div id="subjectsBox"></div>
+                    </div>
+                    <div class="field full-width"><label for="prevschool">Previous School <span class="important">*</span></label><input type="text" id="prevschool" name="Previous School" required></div>
+                    <div class="field"><label for="transfer">Transfer Letter <span class="important">*</span></label><input type="file" id="transfer" name="Transfer Letter" accept=".pdf" required><small>PDF only, max 5MB</small></div>
+                    <div class="field"><label for="report">Latest Report <span class="important">*</span></label><input type="file" id="report" name="Latest Report" accept=".pdf" required><small>PDF only, max 5MB</small></div>
+                </div>
+            </fieldset>
+
+            <button type="submit" class="btn submit-btn">Submit Application</button>
+            <p id="successMsg"></p>
+        </form>
+    </div>
+</section>
+
+        <!-- 4. CONTACT SECTION -->
+        <section class="contact" id="contact">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <div class="contact-grid">
+                    <div>
+                        <h3>Visit Us</h3>
+                        <p>📍 Tela<br>Mount Ayliff<br>Eastern Cape</p>
+                    </div>
+                    <div>
+                        <h3>Call Us</h3>
+                        <p>📞 123 456 7890<br>📞 123 456 7890</p>
+                    </div>
+                    <div>
+                        <h3>Email Us</h3>
+                        <p>📧 admin@gmail.com</p>
+                    </div>
+                    <div>
+                        <h3>Office Hours</h3>
+                        <p>Mon - Fri: 7:00-15:00</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            © 2026 Lindelani Senior Secondary School 💎 <br>
+            By: Teo Code <br>
+            <a href="https://wa.me/27782836043">0782836043</a> <br>
+            <a href="mailto:tiyolindokuhle0@gmail.com?subject=Contact Mr Tiyo">tiyolindokuhle0@gmail.com</a>
+        </footer>
+    </div>
+
+    <script src="script/javascript.js" type="text/javascript"></script>
+</body>
+</html>
